@@ -1,0 +1,332 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<head lang="en">
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<title>Violin - Documentation</title>
+	<!-- Framework CSS -->
+	<link rel="stylesheet" href="assets/blueprint-css/screen.css" type="text/css" media="screen, projection">
+	<link rel="stylesheet" href="assets/blueprint-css/print.css" type="text/css" media="print">
+	<!--[if lt IE 8]><link rel="stylesheet" href="assets/blueprint-css/ie.css" type="text/css" media="screen, projection"><![endif]-->
+	<link rel="stylesheet" href="assets/blueprint-css/plugins/fancy-type/screen.css" type="text/css" media="screen, projection">
+	<style type="text/css" media="screen">
+		p, table, hr, .box { margin-bottom:25px; }
+		.box p { margin-bottom:10px; }
+	</style>
+</head>
+
+
+<body>
+	<div class="container">
+	
+		<h3 class="center alt">&ldquo;Violin&rdquo; Documentation by &ldquo;PiCo&rdquo;</h3>
+		
+		<hr>
+		
+		<h1 class="center"><img style="display: block; margin: 0 auto 20px;" src="assets/logo/violin-dark.png" alt="Violin" width="170" height="150"> Violin</h1>
+		
+		<div class="borderTop">
+			<div class="span-6 colborder info prepend-1">
+				<p class="prepend-top">
+					<strong>
+					Created: 01/12/2016<br>
+					By: Pico<br>
+					Email: <a href="mailto:picotemplates@gmail.com">picotemplates@gmail.com</a>
+					</strong>
+				</p>
+			</div><!-- end div .span-6 -->		
+	
+			<div class="span-12 last">
+				<p class="prepend-top append-0">Thank you for purchasing our template. If you have any questions that are beyond the scope of this help file, please feel free to email via our user page contact form <a href="http://templateforest.net/user/USERNAME">here</a>. Thanks so much!</p>
+			</div>
+		</div><!-- end div .borderTop -->
+		
+		<hr>
+		
+		<h2 id="toc" class="alt">Table of Contents</h2>
+		<ol class="alpha">
+			<li><a href="#htmlStructure">HTML Structure</a></li>
+			<li><a href="#cssFiles">CSS Files and Structure</a></li>
+			<li><a href="#javascript">JavaScript</a></li>
+			<li><a href="#php">PHP Code Explanation</a></li>
+			<li><a href="#credits">Sources and Credits</a></li>	
+		</ol>
+		
+		<hr>
+		
+		<h3 id="htmlStructure"><strong>A) HTML Structure</strong> - <a href="#toc">top</a></h3>
+		<p>This template is a fixed layout with a single column that contains possibility to add multiple columns. All of the information within the main content area is nested within a div with an id of "content". The general template structure is the same throughout the template. Here is the general structure.</p>
+		
+<pre>	&lt;div id="root"&gt;
+		&lt;header id="top"&gt;
+			&lt;p id="logo"&gt;&lt;a href="./" accesskey="h"&gt;Logo&lt;/a&gt;&lt;/p&gt;
+			
+		&lt;/header&gt;                  
+		&lt;section id="content"&gt;
+			
+		&lt;/section&gt;
+		&lt;footer id="footer"&gt;
+		
+		&lt;/footer&gt;
+	&lt;/div&gt;
+</pre>
+
+		<p>Please note that HTML structure is adjustable so you are free to copy/switch/mix elements as you assure that proper HTML structure is kept. If you would like to create a content that is divided into two columns, please add following markup:</p>
+
+<pre>	&lt;div class="double"&gt;
+		&lt;div&gt;
+			Content for first column
+		&lt;/div&gt;
+		&lt;div&gt;
+			Content for second column
+		&lt;/div&gt;
+	&lt;/div&gt;
+</pre>
+		
+		<p>Also, you can add additional classes along with "double", such as "a" to set spacing between items, "inv" to invert columns or "middle" to align elements to center. All of the uses can be investigated on template pages.</p>
+		
+		<p>If you would like to edit the color, font, or style of any elements in one of these columns, you would do the following:</p>
+
+<pre>	a {
+		color: #someColor;
+	} 
+</pre>
+
+		<p>If you find that your new style is not overriding, it is most likely because of a specificity problem. Scroll down in your CSS file and make sure that there isn't a similar style that has more weight.</p>
+
+		<p>I.E.</p>
+
+<pre>	#root a {
+		color: #someColor;
+	}
+</pre>
+
+		<p>So, to ensure that your new styles are applied, make sure that they carry enough "weight" and that there isn't a style lower in the CSS file that is being applied after yours.</p> 
+
+		<hr>
+
+		<h3 id="cssFiles"><strong>B) CSS Files and Structure</strong> - <a href="#toc">top</a></h3>
+
+		<p>We're using one CSS file in this template. There is no a generic reset file because we go one step ahead and predifine all of the HTML structure, so we can work round browser incompatibilities. This file also contains some general styling, such as anchor tag colors, font-sizes, etc. Keep in mind, that these values might be overridden somewhere else in the file.</p> 
+
+		<p>The file is separated into sections using:</p>  
+
+<pre>	/*! Layout --------- */
+	Core layout structure, usually defined with IDs.
+
+	/*! Columns --------- */
+	If you'd like to use two columns view, here's where all the CSS is defined.
+	
+	/*! Modules --------- */
+	Generic modules that are repeatable thorough the website.
+	
+	/*! Headers --------- */
+	Definitions for headings: h1, h2, h3, h4, h5, h6.
+	
+	/*! Content --------- */
+	Definitions for generic content.
+	
+	/*! Links --------- */
+	Definitions for links.
+	
+	/*! Lists --------- */
+	Definitions for lists, mostly ol and ul
+	
+	/*! Media --------- */
+	Definitions for media items, such as images or videos.
+	
+	/*! Forms --------- */
+	Complex CSS standarizer for various form elements and definitions for custom form tags.
+	
+	/*! Tables --------- */
+	Definitions for tables.
+	
+	/*! Helpers --------- */
+	Generic helpers, such as transitions, hiding elements or setting consistent margins.
+	
+	/*! Warnings --------- */
+	Warnings for users that have old versions of Interner Explorer browser or don't support JS (needs to be enabled).
+	
+	/*! Miscellaneous --------- */
+	Misc stuff, more standarizing.
+
+	/*! Fonts --------- */
+	Custom fonts listed along with this project.
+	
+	/*! Animations --------- */
+	All of the CSS3 animations.
+	
+	/*! Icons --------- */
+	All of the icons uniquely created for this project.
+	
+	/*! Typicons --------- */
+	Default "typicons" set.
+
+	/* Responsive --------- */
+	CSS for responsive versions, divided into separate media queries for each resolution.
+		
+</pre>
+		
+		<p>If you would like to edit a specific section of the site, simply find the appropriate label in the CSS file, and then scroll down until you find the appropriate style that needs to be edited.</p> 
+		<p>If you would like to completely redo all of the colors of this template, you might consider purchasing one of the color variations available on our user page <a href="http://templateforest.net/user/USERNAME">here</a></p>
+
+		<hr>
+		
+		<h3 id="javascript"><strong>C) JavaScript</strong> - <a href="#toc">top</a></h3>
+		
+		<p>This template imports three Javascript files.</p>
+		
+		<ol>
+			<li>jQuery</li>
+			<li>Scripts.js</li>
+			<li>Custom.js</li>
+			<li>Mobile.js</li>
+		</ol>
+		  
+		<ol>
+			<li><strong>jQuery is</strong> - a Javascript library that greatly reduces the amount of code that you must write.</li>
+			<li><strong>Scripts.js</strong> - contains all libraries used in the project, each one is compressed to ensure the fastest loading.</li>
+			<li><strong>Customs.js</strong> - is a place where you can find all of the code created uniquely for this project. It is devided into few sections:
+				<ul>
+					<li><strong>links</strong> - very basic script that helps to avoid "target="_blank" attribute which is not recommended from SEO perspective.</li>
+					<li><strong>mails</strong> - putting email address directly can be insecure, we recommend to put it in "name//domain/com" format, so this script can turn it into readable email with slightly better security.</li>
+					<li><strong>forms</strong> - all of the custom JS code to handle special behaviour of forms.</li>
+					<li><strong>heights</strong> - sometimes, we need to play with heights to equalize them.</li>
+					<li><strong>date</strong> - if you don't like to update they year each January, here's the script that will do this for you.</li>
+					<li><strong>responsive</strong> - here's the place where we play a bit with JS for mobile devices.</li>
+					<li><strong>ie.css</strong> - some slight tweaks just for IE.</li>
+					<li><strong>loading</strong> - if you like our CSS/JS preloaders, here's where they are defined.</li>
+					<li><strong>animations</strong> - although all of the animations are handled by CSS, we use a JS to define when they should run.</li>
+					<li><strong>miscellaneous</strong> - all of the generic stuff</li>
+				</ul>
+			</li>
+			<li><strong>Mobile.js</strong> -  contains some awesome features that helps standarizing stuff on various mobile devices</li>
+		</ol>
+		
+		<hr>
+		
+		<h3 id="credits"><strong>E) PHP Code Explanation</strong> - <a href="#toc">top</a></h3>
+		
+		<p>The contact form on index page is already fully fuctional thanks to wise mix of PHP form processing and JS/CSS visual effects. To link your email account to the form, please open the file includes/pcf.php and replace "your_email@domain.com" with valid email address.</p>
+		
+		<hr>
+		
+		<h3 id="php"><strong>D) Sources and Credits</strong> - <a href="#toc">top</a></h3>		
+		
+		<p>We've used the following images, icons or other files as listed.
+		
+		<ul>
+			<li><strong>jQuery</strong>
+				<ul>
+					<li><em>Copyright:</em> jQuery Foundation</li>
+					<li><em>License:</em> MIT</li>
+					<li><em>Version</em> 3.1.1</li>
+					<li><em>URL:</em> https://github.com/jquery/jquery</li>
+				</ul> 
+			</li>
+			<li><strong>Head JS</strong>
+				<ul>
+					<li><em>Copyright:</em> Tero Piirainen</li>
+					<li><em>License:</em> MIT</li>
+					<li><em>Version</em> 1.0.3</li>
+					<li><em>URL:</em> https://github.com/headjs/headjs</li>
+				</ul> 
+			</li>
+			<li><strong>jQuery Migrate</strong>
+				<ul>
+					<li><em>Copyright:</em> jQuery Foundation</li>
+					<li><em>License:</em> MIT</li>
+					<li><em>Version</em> 3.0.0</li>
+					<li><em>URL:</em> https://github.com/jquery/jquery-migrate</li>
+				</ul> 
+			</li>
+			<li><strong>CSS Browser Selector</strong>
+				<ul>
+					<li><em>Copyright:</em> Rafael Lima</li>
+					<li><em>License:</em> Creative Commons</li>
+					<li><em>Version</em> 0.4.0</li>
+					<li><em>URL:</em> https://github.com/rafaelp/css_browser_selector</li>
+				</ul> 
+			</li>
+			<li><strong>jQuery.browser.mobile</strong>
+				<ul>
+					<li><em>Copyright:</em> Chad Smith</li>
+					<li><em>License:</em> Unlicense</li>
+					<li><em>Version</em> 0.4.0</li>
+					<li><em>URL:</em> http://detectmobilebrowser.com</li>
+				</ul> 
+			</li>
+			<li><strong>matchHeight</strong>
+				<ul>
+					<li><em>Copyright:</em> Liam Brummitt</li>
+					<li><em>License:</em> MIT</li>
+					<li><em>Version</em> 0.5.2</li>
+					<li><em>URL:</em> https://github.com/liabru/jquery-match-height</li>
+				</ul> 
+			</li>
+			<li><strong>ltIE9 placeholder</strong>
+				<ul>
+					<li><em>Copyright:</em> Mathias Bynens</li>
+					<li><em>License:</em> MIT</li>
+					<li><em>Version</em> 2.0.8</li>
+					<li><em>URL:</em> https://github.com/mathiasbynens/jquery-placeholder</li>
+				</ul> 
+			</li>
+			<li><strong>jQuery Waypoints</strong>
+				<ul>
+					<li><em>Copyright:</em> Caleb Troughton</li>
+					<li><em>License:</em> MIT</li>
+					<li><em>Version</em> 2.0.3</li>
+					<li><em>URL:</em> https://github.com/imakewebthings/waypoints</li>
+				</ul> 
+			</li>
+			<li><strong>jQuery Validation Plugin</strong>
+				<ul>
+					<li><em>Copyright:</em> Jörn Zaefferer</li>
+					<li><em>License:</em> MIT</li>
+					<li><em>Version</em> 1.15.0</li>
+					<li><em>URL:</em> https://github.com/jzaefferer/jquery-validation</li>
+				</ul> 
+			</li>
+			<li><strong>Typed.js</strong>
+				<ul>
+					<li><em>Copyright:</em> Matt Boldt</li>
+					<li><em>License:</em> MIT</li>
+					<li><em>URL:</em> https://github.com/mattboldt/typed.js</li>
+				</ul> 
+			</li>
+			<li><strong>jQuery Textarea AutoSize plugin</strong>
+				<ul>
+					<li><em>Copyright:</em> Javier Julio</li>
+					<li><em>License:</em> MIT</li>
+					<li><em>Version</em> 0.4.2</li>
+					<li><em>URL:</em> https://github.com/javierjulio/textarea-autosize</li>
+				</ul> 
+			</li>
+			<li><strong>Typicons</strong>
+				<ul>
+					<li><em>Copyright:</em> Stephen Hutchings</li>
+					<li><em>License:</em> CC BY-SA (icons) /  SIL Open Font Licence (font)</li>
+					<li><em>Version</em> 2.0.8</li>
+					<li><em>URL:</em> https://github.com/stephenhutchings/typicons.font</li>
+				</ul> 
+			</li>
+			<li><strong>HTML5 Boilerplate</strong>
+				<ul>
+					<li><em>Copyright:</em> HTML5 Boilerplate</li>
+					<li><em>License:</em> MIT</li>
+					<li><em>Version</em> 5.0.0</li>
+					<li><em>URL:</em> https://github.com/h5bp/html5-boilerplate</li>
+				</ul> 
+			</li>
+		</ul>
+		
+		<hr>
+		
+		<p>Once again, thank you so much for purchasing this template. As we mentioned at the beginning, we'd be glad to help you if you have any questions relating to this template. No guarantees, but we'll do my best to assist. If you have a more general question relating to the templates on ThemeForest, you might consider visiting the forums and asking your question in the "Item Discussion" section.</p> 
+		
+		<p class="append-bottom alt large"><img style="display: block;" src="assets/pico.png" alt="PiCo" width="106" height="53"> <strong>PiCo Team</strong></p>
+		<p><a href="#toc">Go To Table of Contents</a></p>
+		
+		<hr class="space">
+	</div><!-- end div .container -->
+</body>
+</html>
